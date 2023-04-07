@@ -5,7 +5,7 @@ permalink: /
 
 # Jekyll Course Theme
 
-Welcome to the demo page for the theme!
+Welcome to the demo site for the theme!
 
 Read general usage instructions in the [README]({{ "/readme/" | relative_url }}).
 

@@ -1,6 +1,6 @@
 ---
 title: All Material
-permalink: /material/all
+permalink: /material/all/
 hide: true
 
 layout: collection

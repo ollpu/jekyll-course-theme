@@ -1,6 +1,6 @@
 ---
 title: README
-permalink: /readme
+permalink: /readme/
 ---
 
 {% include_relative README.md %}

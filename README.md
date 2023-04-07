@@ -56,14 +56,14 @@ remote_theme: ollpu/jekyll-course-theme@v1
       # Uncomment for Finnish quotes:
       # smart_quotes: rsquo,rsquo,rdquo,rdquo
 
-    permalink: /:title
+    permalink: /:title/
 
     # If you want a collection of pages for course material:
     collections:
       # In Finnish you might want to write e.g. "materiaali:" instead.
       material:
         output: true
-        permalink: /:collection/:title
+        permalink: /:collection/:title/
 
     defaults:
       -
@@ -134,11 +134,11 @@ collections:
   material:
     order: 1
     output: true
-    permalink: /:collection/:title
+    permalink: /:collection/:title/
   bonus:
     order: 2
     output: true
-    permalink: /:collection/:title
+    permalink: /:collection/:title/
 ```
 
 ### Page front matter
@@ -149,7 +149,10 @@ of `---`. The following keys are relevant with this theme:
 - `title`: Title of the page. Used for the `<title>` tag and in navigation.
 - `permalink`: The URL of the page. Can be used with freestanding pages to
   set a specific URL, which is otherwise deduced from the file name.
-- `slug`: The name of the page in the URL, i.e. `/material/[slug]`. Works only
+
+  Always prefer having a trailing slash in the permalink, like `/help/`. This is
+  the only way to ensure both `/help/` and `/help` work, possibly via redirect.
+- `slug`: The name of the page in the URL, i.e. `/material/[slug]/`. Works only
   with collections, but there this can be used to change the last part of the
   URL without specifying the name of the collection.
 - `sections`: A list of sections on the page to form a submenu in navigation.
@@ -190,7 +193,7 @@ the repository with the following content:
 ```md
 ---
 title: All Material
-permalink: /material/all
+permalink: /material/all/
 hide: true
 
 layout: collection
