@@ -180,6 +180,7 @@ of `---`. The following keys are relevant with this theme:
   ## Section_two
   ```
 - `hide`: Setting this to `true` will hide the page from navigation.
+
 ### All material on one page
 
 The `collection` layout can be used form a page that contains all pages from a
