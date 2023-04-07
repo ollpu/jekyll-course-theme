@@ -152,9 +152,10 @@ of `---`. The following keys are relevant with this theme:
 
   Always prefer having a trailing slash in the permalink, like `/help/`. This is
   the only way to ensure both `/help/` and `/help` work, possibly via redirect.
+
 - `slug`: The name of the page in the URL, i.e. `/material/[slug]/`. Works only
   with collections, but there this can be used to change the last part of the
-  URL without specifying the name of the collection.
+  URL without specifying the whole path.
 - `sections`: A list of sections on the page to form a submenu in navigation.
   Each item should correspond to an anchor on the page.
 
@@ -182,7 +183,10 @@ of `---`. The following keys are relevant with this theme:
   ## Section one
   ## Section_two
   ```
+
 - `hide`: Setting this to `true` will hide the page from navigation.
+- `layout`: There is currently only one layout, `default`, other than the
+  special `collection` layout.
 
 ### All material on one page
 
@@ -264,6 +268,9 @@ page](https://ollpu.github.io/jekyll-course-theme/gallery).
   | 222 | 10 |
   | 333 | 5  |
   ```
+
+The `{: }` syntax is a Kramdown [Inline Attribute
+List](https://kramdown.gettalong.org/syntax.html#inline-attribute-lists).
 
 ## License
 
