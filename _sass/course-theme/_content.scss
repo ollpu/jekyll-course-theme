@@ -112,7 +112,7 @@ tbody {
 
 table.inline {
   display: inline-table;
-  margin: $main-padding/2;
+  margin: $main-padding/2 $main-padding $main-padding/2 0;
 }
 
 table[title]::before {
