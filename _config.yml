@@ -11,10 +11,12 @@ kramdown:
   # For Finnish quotes:
   # smart_quotes: rsquo,rsquo,rdquo,rdquo
 
+permalink: /:title
+
 collections:
   material:
     output: true
-    permalink: /:collection/:title/
+    permalink: /:collection/:title
 
 defaults:
   -
