@@ -1,0 +1,128 @@
+
+article:first-of-type {
+  display: flow-root;
+  > p, > h1, > h2 {
+    &:first-child {
+      // fine-tuned to font. should check actual font metrics
+      margin-top: calc(8px - 0.33em);
+    }
+  }
+}
+
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.17em;
+}
+article, p, h1, h2, h3 {
+  scroll-margin-top: $main-padding;
+  @include breakpoint-lt-menu {
+    scroll-margin-top: $top-bar-height + $main-padding;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #999;
+}
+
+.note {
+  background-color: rgba($theme-col, 12%);
+  border-left: 2px solid $theme-col;
+  margin: 1em 0;
+  padding: 0 $main-padding 0 ($main-padding - 2px);
+  display: flow-root;
+}
+
+p.note {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+code {
+  font-family: "Source Code Pro", monospace;
+}
+
+.highlight {
+  pre {
+    padding: $main-padding;
+
+    background-color: #f4f4f4;
+    overflow-x: auto;
+
+    .note & {
+      background-color: rgba(black, 4%);
+    }
+  }
+
+  @include rouge-highlight-theme-github;
+}
+
+.language-console {
+  pre, .note & pre {
+    background-color: #1b1d1e;
+  }
+  @include rouge-highlight-theme-molokai;
+}
+
+.code-title {
+  margin-bottom: 0;
+  width: fit-content;
+
+  padding: 8px $main-padding;
+
+  user-select: none;
+  background-color: rgba($theme-col, 12%);
+  border-bottom: 2px solid $theme-col;
+  font-weight: 600;
+
+  + div pre.highlight {
+    margin-top: 0;
+  }
+}
+
+code.highlighter-rouge {
+  padding: 0.05em 0.2em;
+  background-color: #f4f4f4;
+  box-decoration-break: clone;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+th, td {
+  border: 1px solid #bbb;
+  padding: 4px 8px;
+}
+
+tbody {
+  border-top: 2px solid #666;
+}
+
+table.inline {
+  display: inline-table;
+  margin: $main-padding/2;
+}
+
+table[title]::before {
+  content: attr(title);
+  display: table-caption;
+  caption-side: top;
+  text-align: center;
+
+  font-weight: bold;
+  padding: 4px;
+  background-color: #f4f4f4;
+}
+

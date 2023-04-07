@@ -1,0 +1,12 @@
+---
+layout: base
+---
+<article data-url="{{ p.url }}">
+  {{ content }}
+</article>
+{% assign collection = site.collections | where: "label", page.collection-label | first %}
+{% for p in collection.docs %}
+  <article data-url="{{ p.url }}">
+    {{ p.content }}
+  </article>
+{% endfor %}

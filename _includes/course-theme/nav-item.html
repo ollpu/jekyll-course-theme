@@ -1,0 +1,26 @@
+{%- unless include.item.hide -%}
+<li data-url="{{ include.item.url }}">
+  <a href="{{ include.item.url | relative_url }}"
+    {% if include.item.url == page.url %}class="current"{% endif %}
+  >{{ include.item.title | default: include.item.name }}</a>
+  {% if include.item.sections %}
+    <ul>
+      {% for section in include.item.sections %}
+        {% if section.title %}
+          <li>
+            <a href="{{ include.item.url | relative_url }}#{{ section.anchor }}"
+              data-anchor="{{ section.anchor }}"
+            >{{ section.title }}</a>
+          </li>
+        {% else %}
+          <li>
+            <a href="{{ include.item.url | relative_url }}#{{ section | slugify }}"
+              data-anchor="{{ section | slugify }}"
+            >{{ section }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</li>
+{%- endunless -%}

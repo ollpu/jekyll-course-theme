@@ -1,0 +1,11 @@
+---
+---
+
+$theme-col: {{ site.theme-color | default: "#60a6ec" }};
+@import "course-theme/params";
+@import "course-theme/breakpoints";
+@import "course-theme/mixins";
+@import "course-theme/highlight";
+
+@import "course-theme/main";
+@import "course-theme/content";

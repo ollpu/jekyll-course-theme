@@ -1,0 +1,261 @@
+
+html {
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @include breakpoint-lt-menu {
+    display: block;
+  }
+}
+
+.side {
+  @include sticky;
+  $top: $main-padding - $top-offset;
+  top: $top;
+  width: $side-width;
+  max-height: calc(100vh - #{$top});
+  flex-shrink: 0;
+  margin-left: $main-padding;
+
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint-lt-menu {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    height: calc(100vh - #{$top-bar-height});
+    max-height: none;
+    left: -100%;
+    width: 100%;
+    max-width: $menu-width;
+    margin-left: 0;
+
+    visibility: hidden;
+
+    background-color: white;
+    border-top: $top-bar-height solid $theme-col;
+    @include dark-shadow;
+
+    transition: left ease-in, visibility;
+    transition-duration: $menu-opening-duration;
+
+    .opened & {
+      left: 0;
+      visibility: visible;
+      transition-timing-function: ease-out;
+    }
+  }
+}
+
+header {
+  position: relative;
+  z-index: 2;
+
+  box-sizing: border-box;
+  padding: $side-padding;
+  padding-top: $top-offset;
+
+  background-color: $theme-col;
+
+  > h1 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+  > h2 {
+    margin: 4px 0 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  @include breakpoint-lt-menu {
+    padding: 0 $menu-padding $side-padding;
+  }
+}
+
+a.header {
+  color: black;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+nav {
+  &::before {
+    display: flow-root;
+    @include sticky;
+    top: 0;
+    content: '';
+    @include white-shadow;
+  }
+
+  box-sizing: border-box;
+  padding-bottom: $top-offset;
+
+  overflow-y: auto;
+  scroll-padding: 20% 0;
+
+  ul {
+    margin: 5px 0 10px 16px;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  > ul {
+    margin: $main-padding 0;
+    > li > a {
+      border-left-color: transparent;
+    }
+  }
+
+  @include breakpoint-lt-menu {
+    background-color: white;
+
+    ul {
+      padding-left: $menu-padding - $side-padding;
+    }
+  }
+
+  a {
+    display: inline-block;
+    width: 100%;
+
+    box-sizing: border-box;
+    padding: 5px ($side-padding - 4px);
+
+    border-left: 2px solid #999;
+    text-decoration: none;
+    color: inherit;
+
+    &.current {
+      border-left-color: $theme-col;
+      background-color: rgba($theme-col, 12%);
+    }
+    &:hover {
+      border-left-color: #999;
+      background-color: rgba(black, 8%);
+    }
+    &:active, &.current:active {
+      border-left-color: #777;
+      background-color: rgba(black, 16%);
+    }
+  }
+}
+
+main {
+  max-width: $main-width;
+  flex-grow: 1;
+
+  padding: 0 $main-padding;
+  padding-top: $top-offset;
+  overflow-x: hidden;
+
+  @include breakpoint-lt-menu {
+    padding-top: $top-bar-height + $main-padding;
+  }
+}
+
+.awning {
+  display: none;
+
+  @include breakpoint-lt-menu {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $top-bar-height;
+
+    padding-left: $top-bar-height + $main-padding;
+    padding-right: $main-padding;
+
+    color: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: $top-bar-height;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background-color: white;
+    @include white-shadow;
+
+    transition: color;
+    transition-duration: $awning-appear-duration;
+
+    &.show {
+      color: black;
+    }
+
+    .loading & {
+      transition: none;
+    }
+  }
+}
+
+.menu {
+  display: none;
+
+  @include breakpoint-lt-menu {
+    background-color: $theme-col;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    width: $top-bar-height;
+    height: $top-bar-height;
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    &:active {
+      background-color: mix(black, $theme-col, 10%);
+    }
+    svg {
+      fill: rgba(black, 70%);
+    }
+  }
+}
+
+.menu-background {
+  display: none;
+
+  @include breakpoint-lt-menu {
+    display: initial;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(black, 10%);
+
+    transition: opacity, visibility;
+    transition-duration: $menu-opening-duration;
+
+    .opened & {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

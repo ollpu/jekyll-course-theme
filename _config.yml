@@ -1,0 +1,24 @@
+title: Jekyll Course Theme
+subtitle: Version 0
+lang: en
+baseurl: "/jekyll-course-theme"
+url: "https://ollpu.github.io"
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  # For Finnish quotes:
+  # smart_quotes: rsquo,rsquo,rdquo,rdquo
+
+collections:
+  material:
+    output: true
+    permalink: /:collection/:title/
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"

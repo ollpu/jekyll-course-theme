@@ -1,0 +1,14 @@
+
+@mixin sticky {
+  position: sticky;
+  position: -webkit-sticky;
+}
+
+@mixin white-shadow {
+  box-shadow: 0 0 12px 6px white;
+}
+
+@mixin dark-shadow {
+  box-shadow: 0 0 10px rgba(black, 5%);
+}
+

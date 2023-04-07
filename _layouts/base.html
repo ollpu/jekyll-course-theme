@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      {%- if page.title -%}
+        {{ page.title }} – 
+      {% endif -%}
+      {{ site.title }}
+    </title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <script src="{{ "/assets/js/navigation.js" | relative_url }}"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700|Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, { delimiter: [{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}] });"></script>
+  </head>
+  <body class="loading">
+    <div class="menu-background" id="menu-background"></div>
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="side" aria-label="Menu">
+      <svg viewBox="0 0 5 5" width="25" height="25">
+        <rect width="5" height="1"></rect>
+        <rect width="5" height="1" y="2"></rect>
+        <rect width="5" height="1" y="4"></rect>
+      </svg>
+    </button>
+    <div class="side" id="side">
+      <a class="header" href="{{ "/" | relative_url }}">
+        <header>
+          <h1>{{ site.title }}</h1>
+          {%- if site.subtitle -%}
+            <h2>{{ site.subtitle }}</h2>
+          {%- endif -%}
+        </header>
+      </a>
+      <nav>
+        {% comment %}
+        TODO: Stable sort by "order" key (or at least preserve order of nils
+        {% endcomment %}
+        <ul>
+          {% assign items = site.html_pages | where: "collection", nil %}
+          {% for p in items %}
+            {% include course-theme/nav-item.html item=p %}
+          {% endfor %}
+        </ul>
+        {% assign collections = site.collections | sort: "order", "last" %}
+        {% for c in collections %}
+          {% unless c.label == "posts" %}
+          {% if c.docs %}
+          <ul>
+            {% for p in c.docs %}
+              {% include course-theme/nav-item.html item=p %}
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% endunless %}
+        {% endfor %}
+      </nav>
+    </div>
+    <main>
+      <div class="awning" id="awning" aria-hidden="true">{{ page.title }}</div>
+      {{ content }}
+    </main>
+  </body>
+</html>
