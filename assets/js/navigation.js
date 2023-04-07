@@ -1,7 +1,3 @@
-// painamalla menee erikoistilaan ja sulkee valikon
-// scrollintoview?
-// mites homma toimii jos onkin se kaikkisamallasivulla juttu
-
 function menu(open) {
   if (open === undefined) open = !document.body.classList.contains("opened");
   document.body.classList.toggle("opened", open);
@@ -103,9 +99,11 @@ let lastSectionIdx = null;
 function updateScroll(initial=false) {
   const scroll = document.documentElement.scrollTop;
   // TODO: scroll-margin-top also depends on CSS media queries
-  const currentSectionIdx = sections.findLastIndex(
-    section => scroll >= section.anchor.offsetTop - (section.first ? 0 : 92)
-  );
+  let currentSectionIdx = sections.length - 1;
+  for (; currentSectionIdx >= 0; currentSectionIdx--) {
+    const section = sections[currentSectionIdx];
+    if (scroll >= section.anchor.offsetTop - (section.first ? 0 : 92)) break;
+  }
 
   if (currentSectionIdx != lastSectionIdx) {
     lastSectionIdx = currentSectionIdx;
