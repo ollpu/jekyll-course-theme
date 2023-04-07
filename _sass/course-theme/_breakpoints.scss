@@ -1,6 +1,12 @@
 
 @mixin breakpoint-lt-menu {
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 780px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-lt-small {
+  @media screen and (max-width: 550px) {
     @content;
   }
 }

@@ -21,7 +21,7 @@ h3 {
 article, p, h1, h2, h3 {
   scroll-margin-top: $main-padding;
   @include breakpoint-lt-menu {
-    scroll-margin-top: $top-bar-height + $main-padding;
+    scroll-margin-top: $top-bar-height + $main-padding-bp-lt-menu;
   }
 }
 
@@ -31,14 +31,14 @@ img {
 
 hr {
   border: none;
-  border-top: 2px solid #999;
+  border-top: 1px solid #999;
 }
 
 .note {
   background-color: rgba($theme-col, 12%);
   border-left: 2px solid $theme-col;
   margin: 1em 0;
-  padding: 0 $main-padding 0 ($main-padding - 2px);
+  padding: 0 1em 0 calc(1em - 2px);
   display: flow-root;
 }
 
@@ -53,7 +53,7 @@ code {
 
 .highlight {
   pre {
-    padding: $main-padding;
+    padding: 1em;
 
     background-color: #f4f4f4;
     overflow-x: auto;
@@ -77,7 +77,7 @@ code {
   margin-bottom: 0;
   width: fit-content;
 
-  padding: 8px $main-padding;
+  padding: 0.45em 1em;
 
   user-select: none;
   background-color: rgba($theme-col, 12%);
@@ -112,7 +112,7 @@ tbody {
 
 table.inline {
   display: inline-table;
-  margin: $main-padding/2 $main-padding $main-padding/2 0;
+  margin: 0.5em 1em 0.5em 0;
 }
 
 table[title]::before {

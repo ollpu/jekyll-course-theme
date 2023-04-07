@@ -4,6 +4,10 @@ html {
   font-family: "Open Sans", sans-serif;
   scroll-behavior: smooth;
   overflow-y: scroll;
+
+  @include breakpoint-lt-small {
+    font-size: 16px;
+  }
 }
 
 body {
@@ -157,12 +161,11 @@ main {
   max-width: $main-width;
   flex-grow: 1;
 
-  padding: 0 $main-padding;
-  padding-top: $top-offset;
+  padding: $top-offset $main-padding 0;
   overflow-x: hidden;
 
   @include breakpoint-lt-menu {
-    padding-top: $top-bar-height + $main-padding;
+    padding: ($top-bar-height + $main-padding) $main-padding-bp-lt-menu 0;
   }
 }
 
@@ -178,8 +181,8 @@ main {
     right: 0;
     height: $top-bar-height;
 
-    padding-left: $top-bar-height + $main-padding;
-    padding-right: $main-padding;
+    padding-left: $top-bar-height + $main-padding-bp-lt-menu;
+    padding-right: $main-padding-bp-lt-menu;
 
     color: transparent;
     font-size: 1rem;
