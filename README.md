@@ -19,7 +19,7 @@ plugins:
 remote_theme: ollpu/jekyll-course-theme@v1
 ```
 
-## Setup for new site
+## Set up new site
 
 1.  **Initialize Jekyll (optional)**
     
@@ -28,8 +28,30 @@ remote_theme: ollpu/jekyll-course-theme@v1
 
     Run
     ```
-    jekyll new site-name
-    cd site-name
+    jekyll new --skip-bundle .
+    rm -r 404.html index.* about.* _posts
+    ```
+
+    In `Gemfile`, comment out the lines
+    ```
+    gem "jekyll", "~> ..."
+    gem "minima", "~> ..."
+    # and
+      gem "jekyll-feed", "~> ..."
+    ```
+    and uncomment the line
+    ```
+    # gem "github-pages", group: :jekyll_plugins
+    ```
+    If you are using Ruby 3, you might need to add this line to the end o f then
+    `Gemfile` as well:
+    ```
+    gem "webrick", "~> 1.3"
+    ```
+
+    Now run `bundle install`. The site can be tested locally with
+    ```
+    bundle exec jekyll serve
     ```
 2.  **Configure site**
 
@@ -43,9 +65,6 @@ remote_theme: ollpu/jekyll-course-theme@v1
     url: "https://GITHUB_USER.github.io"
     # Uncomment to change the theme color:
     # theme-color: '#60a6ec'
-
-    plugins:
-      - jekyll-remote-theme
 
     remote_theme: ollpu/jekyll-course-theme@v1
 
