@@ -13,11 +13,11 @@ This theme is currently not on RubyGems, and it is intended to be used via the
 Add this to your `_config.yml`:
 
 ```yaml
-plugins:
-  - jekyll-remote-theme
-
 remote_theme: ollpu/jekyll-course-theme@v1
 ```
+
+Make sure the `jekyll-remote-theme` plugin is installed and enabled. It is
+automatically enabled on GitHub Pages and when using `gem "github-pages"`.
 
 ## Set up new site
 
@@ -43,7 +43,7 @@ remote_theme: ollpu/jekyll-course-theme@v1
     ```
     # gem "github-pages", group: :jekyll_plugins
     ```
-    If you are using Ruby 3, you might need to add this line to the end o f then
+    If you are using Ruby 3, you might need to add this line to the end of the
     `Gemfile` as well:
     ```
     gem "webrick", "~> 1.3"
@@ -132,8 +132,8 @@ remote_theme: ollpu/jekyll-course-theme@v1
 
 ### File names
 
-Page order is determined by their file names, so it is recommended to prefix
-names with a two-digit counter such as `00-index.md`, `01-page.md` etc. or have
+Page order is determined by file names, so it is recommended to prefix names
+with a two-digit counter such as `00-index.md`, `01-page.md` etc., or have
 names like `part-01.md`, `part-02.md` etc. within a collection. For this to not
 be visible in the URL, set a [permalink](#page-front-matter).
 
