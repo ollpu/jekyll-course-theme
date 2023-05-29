@@ -1,0 +1,38 @@
+---
+---
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('{{ "/assets/fonts/Open-Sans-400.woff2" | relative_url }}') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('{{ "/assets/fonts/Open-Sans-600.woff2" | relative_url }}') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('{{ "/assets/fonts/Open-Sans-700.woff2" | relative_url }}') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('{{ "/assets/fonts/Source-Code-Pro-400.woff2" | relative_url }}') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('{{ "/assets/fonts/Source-Code-Pro-700.woff2" | relative_url }}') format('woff2');
+}
+
