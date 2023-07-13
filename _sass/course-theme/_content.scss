@@ -47,32 +47,6 @@ p.note {
   padding-bottom: 1em;
 }
 
-code {
-  font-family: "Source Code Pro", monospace;
-}
-
-.highlight {
-  pre {
-    padding: 1em;
-
-    background-color: #f4f4f4;
-    overflow-x: auto;
-
-    .note & {
-      background-color: rgba(black, 4%);
-    }
-  }
-
-  @include rouge-highlight-theme-github;
-}
-
-.language-console {
-  pre, .note & pre {
-    background-color: #1b1d1e;
-  }
-  @include rouge-highlight-theme-molokai;
-}
-
 .code-title, .note-title {
   margin-bottom: 0;
   width: fit-content;
@@ -101,25 +75,19 @@ code {
   }
 }
 
-code.highlighter-rouge {
-  padding: 0.05em 0.2em;
-  background-color: #f4f4f4;
-  box-decoration-break: clone;
-}
-
 table {
   border-collapse: collapse;
   margin: 1em 0;
   overflow-x: auto;
 }
 
+tbody {
+  border-top: 2px solid #666;
+}
+
 th, td {
   border: 1px solid #bbb;
   padding: 4px 8px;
-}
-
-tbody {
-  border-top: 2px solid #666;
 }
 
 table.inline {
@@ -138,3 +106,65 @@ table[title]::before {
   background-color: #f4f4f4;
 }
 
+code {
+  font-family: "Source Code Pro", monospace;
+}
+
+// Inline code
+code.highlighter-rouge {
+  padding: 0.05em 0.2em;
+  background-color: #f4f4f4;
+  box-decoration-break: clone;
+}
+
+.highlight {
+  pre {
+    padding: 1em;
+
+    background-color: #f4f4f4;
+    overflow-x: auto;
+
+    .note & {
+      background-color: rgba(black, 4%);
+    }
+  }
+
+  @include rouge-highlight-theme-github;
+}
+
+.language-console {
+  pre, .note & pre {
+    background-color: #1b1d1e;
+  }
+  @include rouge-highlight-theme-molokai;
+}
+
+figure.highlight {
+  margin: 0;
+}
+
+.rouge-table {
+  margin: 0;
+
+  tbody {
+    border: none;
+  }
+
+  td {
+    border: none;
+    padding: 0;
+  }
+
+  pre {
+    margin: 0;
+    padding: 0;
+  }
+
+  .gutter {
+    padding-right: 1em;
+
+    text-align: right;
+    color: #444;
+    user-select: none;
+  }
+}

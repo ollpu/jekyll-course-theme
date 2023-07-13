@@ -95,6 +95,26 @@ while True:
         break
 ```
 
+### Code with line numbers
+
+<!-- The console?lang=.. syntax is unfortunately not supported here -->
+
+{% highlight python linenos %}
+def count_even(numbers):
+    result = 0
+    for x in numbers:
+        if x % 2 == 0:
+            result += 1
+    return result
+
+def count_odd(numbers):
+    result = 0
+    for x in numbers:
+        if x % 2 == 1:
+            result += 1
+    return result
+{% endhighlight %}
+
 ### Wide text
 
 ```

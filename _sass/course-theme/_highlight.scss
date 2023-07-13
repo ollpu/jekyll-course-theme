@@ -1,6 +1,4 @@
 @mixin rouge-highlight-theme-github {
-  table td { padding: 5px; }
-  table pre { margin: 0; }
   .cm {
     color: #999988;
     font-style: italic;
@@ -213,8 +211,6 @@
 
 // .go (Generic.Output) modified for visibility
 @mixin rouge-highlight-theme-molokai {
-  table td { padding: 5px; }
-  table pre { margin: 0; }
   .c, .ch, .cd, .cpf {
     color: #5e5d83;
     font-style: italic;
