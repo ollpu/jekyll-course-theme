@@ -73,18 +73,30 @@ code {
   @include rouge-highlight-theme-molokai;
 }
 
-.code-title {
+.code-title, .note-title {
   margin-bottom: 0;
   width: fit-content;
 
-  padding: 0.45em 1em;
-
-  user-select: none;
-  background-color: rgba($theme-col, 12%);
-  border-bottom: 2px solid $theme-col;
+  font-size: inherit;
   font-weight: 600;
+  background-color: rgba($theme-col, 12%);
+}
 
-  + div pre.highlight {
+.code-title {
+  padding: 0.45em 1em;
+  user-select: none;
+  border-bottom: 2px solid $theme-col;
+
+  + div pre.highlight, + .note {
+    margin-top: 0;
+  }
+}
+
+.note-title {
+  padding: 0.45em 1em 0.45em calc(1em - 2px);
+  border-left: 2px solid $theme-col;
+
+  + .note {
     margin-top: 0;
   }
 }

@@ -31,6 +31,15 @@ such as a code snippet
 ```
 </div>
 
+<!-- The .note-title can optionally be made a title (#, ##, ###, ...) for
+     semantics but a plain paragraph will work as well. -->
+
+{: .note-title }
+### Title here
+
+{: .note }
+A note with a title
+
 ## Code
 
 ### SQL code
