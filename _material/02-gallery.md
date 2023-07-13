@@ -15,7 +15,7 @@ sections:
 {: .note }
 Proin fermentum _mollis_ elit id porta. Morbi vulputate risus a dictum
 scelerisque. **Nunc** purus felis, maximus vel euismod non, dictum id nibh.
-Aenean facilisis leo est, in vehicula diam iaculis vitae. Morbi gravida
+Aenean facilisis leo est, _in vehicula diam iaculis_ (_vitae_). Morbi gravida
 varius orci, in tempus eros laoreet a. In volutpat, risus nec tempus
 consequat, est ex fringilla lacus, ac fringilla nisl nibh sed sapien.
 Maecenas vel libero nec nunc rutrum venenatis eget ac nisi. Suspendisse

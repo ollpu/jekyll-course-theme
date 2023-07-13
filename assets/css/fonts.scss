@@ -1,38 +1,24 @@
 ---
 ---
 
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('{{ "/assets/fonts/Open-Sans-400.woff2" | relative_url }}') format('woff2');
+@mixin font($family, $style, $weight, $file) {
+  @font-face {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    src: url('{{ "/assets/fonts/" | relative_url }}' + $file) format('woff2');
+  }
 }
 
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: url('{{ "/assets/fonts/Open-Sans-600.woff2" | relative_url }}') format('woff2');
-}
+@include font('Open Sans', normal, 400, 'Open-Sans-400.woff2');
+@include font('Open Sans', normal, 600, 'Open-Sans-600.woff2');
+@include font('Open Sans', normal, 700, 'Open-Sans-700.woff2');
+@include font('Open Sans', italic, 400, 'Open-Sans-400-italic.woff2');
+@include font('Open Sans', italic, 600, 'Open-Sans-600-italic.woff2');
+@include font('Open Sans', italic, 700, 'Open-Sans-700-italic.woff2');
 
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: url('{{ "/assets/fonts/Open-Sans-700.woff2" | relative_url }}') format('woff2');
-}
-
-@font-face {
-  font-family: 'Source Code Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: url('{{ "/assets/fonts/Source-Code-Pro-400.woff2" | relative_url }}') format('woff2');
-}
-
-@font-face {
-  font-family: 'Source Code Pro';
-  font-style: normal;
-  font-weight: 700;
-  src: url('{{ "/assets/fonts/Source-Code-Pro-700.woff2" | relative_url }}') format('woff2');
-}
+@include font('Source Code Pro', normal, 400, 'Source-Code-Pro-400.woff2');
+@include font('Source Code Pro', normal, 700, 'Source-Code-Pro-700.woff2');
+@include font('Source Code Pro', italic, 400, 'Source-Code-Pro-400-italic.woff2');
+@include font('Source Code Pro', italic, 700, 'Source-Code-Pro-700-italic.woff2');
 
