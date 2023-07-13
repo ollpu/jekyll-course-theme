@@ -123,6 +123,10 @@ nav {
     }
   }
 
+  ul.hide-menu {
+    display: none;
+  }
+
   @include breakpoint-lt-menu {
     background-color: white;
 

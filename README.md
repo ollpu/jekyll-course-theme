@@ -84,6 +84,10 @@ automatically enabled on GitHub Pages and when using `gem "github-pages"`.
         output: true
         permalink: /:collection/:title/
 
+    # Uncomment to hide the section submenus in navigation
+    # for pages other than the current one:
+    # hide_other_section_menus: true
+
     defaults:
       -
         scope:

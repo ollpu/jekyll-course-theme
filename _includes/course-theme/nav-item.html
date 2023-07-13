@@ -3,7 +3,12 @@
   <a href="{{ include.item.url | relative_url }}"
     {% if include.item.url == page.url %}class="current"{% endif %}
   >{{ include.item.title | default: include.item.name }}</a>
-  {% if include.item.sections %}
+  {% if site.hide_other_section_menus %}
+    {% assign show_others = false %}
+  {% else %}
+    {% assign show_others = true %}
+  {% endif %}
+  {% if include.item.sections and (show_others or include.item.url == page.url or layout.show_all_section_menus) %}
     <ul>
       {% for section in include.item.sections %}
         {% if section.title %}

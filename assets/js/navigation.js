@@ -1,10 +1,13 @@
+
 function menu(open) {
   if (open === undefined) open = !document.body.classList.contains("opened");
+  if (open) updateScroll();
   document.body.classList.toggle("opened", open);
   document.getElementById("menu").setAttribute("aria-expanded", open);
 }
 
 let articles = {};
+let sublists = {};
 let sections = [];
 let updateHash;
 
@@ -17,19 +20,22 @@ function loadSections() {
 
   const pageNavs = document.querySelectorAll("nav li[data-url]");
   for (const pageNav of pageNavs) {
-    if (!(pageNav.dataset.url in articles)) continue;
-    const article = articles[pageNav.dataset.url];
+    const article_key = pageNav.dataset.url;
+    if (!(article_key in articles)) continue;
+    const article = articles[article_key];
 
     const link = pageNav.getElementsByTagName("a")[0];
     sections.push({
       title: link.innerHTML,
       link: link,
       anchor: article,
+      articleKey: article_key,
       first: sections.length === 0,
     });
 
     const sublist = pageNav.getElementsByTagName("ul")[0];
     if (sublist) {
+      sublists[pageNav.dataset.url] = sublist;
       for (const child of sublist.children) {
         const link = child.children[0];
         const anchor = article.querySelector("#" + link.dataset.anchor);
@@ -39,6 +45,7 @@ function loadSections() {
           link: link,
           anchor: anchor,
           hash: link.dataset.anchor,
+          articleKey: article_key,
           first: false,
         });
       }
@@ -70,27 +77,38 @@ function chooseSection(currentSection, scroll="normal") {
     section.link.classList.remove("current");
   }
 
-  let link = null;
+  let effSection = null;
 
   if (currentSection) {
-    link = currentSection.link;
-    link.classList.add("current");
+    effSection = currentSection;
     document.getElementById("awning").classList.add("show");
   } else {
     if (sections.length) {
-      link = sections[0].link;
-      link.classList.add("current");
+      effSection = sections[0];
     }
     document.getElementById("awning").classList.remove("show");
   }
 
-  if (link && scroll !== "none") {
-    if (scroll === "initial") {
-      const nav = document.getElementsByTagName("nav")[0];
-      nav.scrollTop = link.offsetTop - nav.offsetTop - nav.clientHeight * 0.3;
+  if (hideOtherSectionMenus) {
+    const articleKey = effSection ? effSection.articleKey : null;
+    for (const key of Object.keys(sublists)) {
+      sublists[key].classList.toggle("hide-menu", key != articleKey);
     }
-    // behavior: smooth doesn't work on Chrome while the user is scrolling the window
-    link.scrollIntoView({ behavior: "auto", block: "nearest" });
+  }
+
+  if (effSection) {
+    const link = effSection.link;
+
+    link.classList.add("current");
+
+    if (scroll !== "none") {
+      if (scroll === "initial") {
+        const nav = document.getElementsByTagName("nav")[0];
+        nav.scrollTop = link.offsetTop - nav.offsetTop - nav.clientHeight * 0.3;
+      }
+      // behavior: smooth doesn't work on Chrome while the user is scrolling the window
+      link.scrollIntoView({ behavior: "auto", block: "nearest" });
+    }
   }
 }
 

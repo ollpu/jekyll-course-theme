@@ -18,6 +18,8 @@ collections:
     output: true
     permalink: /:collection/:title/
 
+hide_other_section_menus: false
+
 defaults:
   -
     scope:
