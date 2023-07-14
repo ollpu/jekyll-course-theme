@@ -247,6 +247,14 @@ page](https://ollpu.github.io/jekyll-course-theme/gallery).
   Block content...
   </div>
   ```
+- Note with title (works with paragraphs or blocks)
+  ```
+  {: .note-title }
+  Title...
+
+  {: .note }
+  Text..
+  ```
 - Use the `console` highlighter with appropriate flags for prompts.
 
   sqlite:
@@ -264,6 +272,14 @@ page](https://ollpu.github.io/jekyll-course-theme/gallery).
   test
   ```
   ````
+- Adding line numbers to code blocks requires a separate syntax, which doesn't work with the above `console?lang=`.
+  ```
+  {% highlight python linenos %}
+  def main():
+      # This is line 2
+      pass
+  {% endhighlight %}
+  ```
 - Title for code block, e.g. the name of the file
   ````
   {: .code-title }
