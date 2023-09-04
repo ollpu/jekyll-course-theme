@@ -76,8 +76,12 @@ p.note {
 }
 
 table {
-  border-collapse: collapse;
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
   margin: 1em 0;
+
+  border-collapse: collapse;
 }
 
 tbody {
