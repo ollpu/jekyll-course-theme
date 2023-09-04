@@ -78,7 +78,6 @@ p.note {
 table {
   border-collapse: collapse;
   margin: 1em 0;
-  overflow-x: auto;
 }
 
 tbody {
@@ -104,6 +103,14 @@ table[title]::before {
   font-weight: bold;
   padding: 4px;
   background-color: #f4f4f4;
+}
+
+@for $w from 1 through 16 {
+  .cell-w-#{$w} {
+    th, td {
+      width: $w * 1em;
+    }
+  }
 }
 
 code {

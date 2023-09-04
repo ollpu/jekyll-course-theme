@@ -273,6 +273,7 @@ page](https://ollpu.github.io/jekyll-course-theme/gallery).
   ```
   ````
 - Adding line numbers to code blocks requires a separate syntax, which doesn't work with the above `console?lang=`.
+  <!-- {% raw %} -->
   ```
   {% highlight python linenos %}
   def main():
@@ -280,6 +281,7 @@ page](https://ollpu.github.io/jekyll-course-theme/gallery).
       pass
   {% endhighlight %}
   ```
+  <!-- {% endraw %} -->
 - Title for code block, e.g. the name of the file
   ````
   {: .code-title }
@@ -306,6 +308,12 @@ page](https://ollpu.github.io/jekyll-course-theme/gallery).
   | 111 | 5  |
   | 222 | 10 |
   | 333 | 5  |
+  ```
+- Table with minimum cell width. Class `cell-w-n`, `n=1..16`.
+  ```
+  {: .cell-w-4 }
+  | A | B  |
+  | 1 | 12 |
   ```
 
 The `{: }` syntax is a Kramdown [Inline Attribute

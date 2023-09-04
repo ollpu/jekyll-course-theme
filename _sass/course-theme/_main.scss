@@ -166,7 +166,7 @@ main {
   flex-grow: 1;
 
   padding: $top-offset $main-padding 0;
-  overflow-x: hidden;
+  overflow-x: scroll;
 
   @include breakpoint-lt-menu {
     padding: ($top-bar-height + $main-padding) $main-padding-bp-lt-menu 0;
