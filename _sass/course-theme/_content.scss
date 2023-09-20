@@ -179,3 +179,9 @@ figure.highlight {
     user-select: none;
   }
 }
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;
+}
