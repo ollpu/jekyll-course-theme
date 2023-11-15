@@ -40,6 +40,10 @@ function loadSections() {
         const link = child.children[0];
         const anchor = article.querySelector("#" + link.dataset.anchor);
 
+        if (!anchor) {
+          link.classList.add("unbound");
+        }
+
         sections.push({
           title: link.innerHTML,
           link: link,
@@ -120,7 +124,7 @@ function updateScroll(initial=false) {
   let currentSectionIdx = sections.length - 1;
   for (; currentSectionIdx >= 0; currentSectionIdx--) {
     const section = sections[currentSectionIdx];
-    if (scroll >= section.anchor.offsetTop - (section.first ? 0 : 92)) break;
+    if (section.anchor && scroll >= section.anchor.offsetTop - (section.first ? 0 : 92)) break;
   }
 
   if (currentSectionIdx != lastSectionIdx) {

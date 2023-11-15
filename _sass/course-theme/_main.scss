@@ -158,6 +158,9 @@ nav {
       border-left-color: #777;
       background-color: rgba(black, 16%);
     }
+    &.unbound {
+      color: red;
+    }
   }
 }
 
