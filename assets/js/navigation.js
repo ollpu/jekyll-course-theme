@@ -16,7 +16,7 @@ function loadSections() {
   for (const article of articleNodes) {
     articles[article.dataset.url] = article;
   }
-  updateHash = articles.length === 1;
+  updateHash = Object.keys(articles).length === 1;
 
   const pageNavs = document.querySelectorAll("nav li[data-url]");
   for (const pageNav of pageNavs) {
