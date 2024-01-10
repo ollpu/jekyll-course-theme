@@ -259,7 +259,7 @@ page](https://ollpu.github.io/jekyll-course-theme/gallery).
 
   sqlite:
   ````
-  ```console?lang=sqlite
+  ```console?lang=sql
   sqlite> SELECT * FROM x;
   ...
   ```
