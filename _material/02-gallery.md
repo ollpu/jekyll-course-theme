@@ -53,9 +53,9 @@ WHERE
   Kurssit.opettaja_id = Opettajat.id;
 ```
 
-### SQL console
+### SQLite console
 
-```console?lang=sql
+```console?lang=sqlite
 sqlite> SELECT 2*(1+3);
 8
 sqlite> SELECT 'tes' || 'ti';
