@@ -51,7 +51,7 @@ automatically enabled on GitHub Pages and when using `gem "github-pages"`.
 
     Now run `bundle install`. The site can be tested locally with
     ```
-    bundle exec jekyll serve
+    bundle exec jekyll serve --livereload
     ```
 2.  **Configure site**
 
