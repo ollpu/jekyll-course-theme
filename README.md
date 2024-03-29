@@ -195,12 +195,12 @@ of `---`. The following keys are relevant with this theme:
 
   In some cases, such as when there are underscores in the name, the automatic
   conversion will be incorrect. In this case, or if a different name is
-  otherwise desired, the name and anchor ID can be specified separately:
+  otherwise desired, the title and anchor ID can be specified separately:
   ```
   ---
   sections:
     - Section one
-    - name: Section_two
+    - title: Section_two
       anchor: section_two
   ---
   ## Section one
