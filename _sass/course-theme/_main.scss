@@ -172,7 +172,11 @@ main {
   overflow-x: scroll;
 
   @include breakpoint-lt-menu {
-    padding: ($top-bar-height + $main-padding) $main-padding-bp-lt-menu 0;
+    padding: ($top-bar-height + $main-padding) $main-padding 0;
+  }
+  @include breakpoint-lt-small {
+    padding-left: $main-padding-bp-lt-small;
+    padding-right: $main-padding-bp-lt-small;
   }
 }
 
@@ -188,8 +192,8 @@ main {
     right: 0;
     height: $top-bar-height;
 
-    padding-left: $top-bar-height + $main-padding-bp-lt-menu;
-    padding-right: $main-padding-bp-lt-menu;
+    padding-left: $top-bar-height + $main-padding;
+    padding-right: $main-padding;
 
     color: transparent;
     font-size: 1rem;
@@ -211,6 +215,11 @@ main {
     .loading & {
       transition: none;
     }
+  }
+
+  @include breakpoint-lt-small {
+    padding-left: $top-bar-height + $main-padding-bp-lt-small;
+    padding-right: $main-padding-bp-lt-small;
   }
 }
 

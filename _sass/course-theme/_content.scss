@@ -21,7 +21,7 @@ h3 {
 article, p, h1, h2, h3 {
   scroll-margin-top: $main-padding;
   @include breakpoint-lt-menu {
-    scroll-margin-top: $top-bar-height + $main-padding-bp-lt-menu;
+    scroll-margin-top: $top-bar-height + $main-padding;
   }
 }
 
