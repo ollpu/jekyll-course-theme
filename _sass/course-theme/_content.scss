@@ -143,10 +143,8 @@ code.highlighter-rouge {
   }
 
   @include rouge-highlight-theme-github;
-}
 
-@media (prefers-color-scheme: dark) {
-  .highlight {
+  .dark-theme & {
     @include rouge-highlight-theme-molokai;
   }
 }

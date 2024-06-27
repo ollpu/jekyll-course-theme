@@ -6,6 +6,32 @@ function menu(open) {
   document.getElementById("menu").setAttribute("aria-expanded", open);
 }
 
+let themeChannel;
+if (window.BroadcastChannel) {
+  themeChannel = new BroadcastChannel("theme");
+}
+
+function applyTheme(newTheme) {
+  activeTheme = newTheme;
+  document.documentElement.classList.toggle(
+    "dark-theme",
+    activeTheme === "dark"
+  );
+}
+
+function toggleTheme(newTheme) {
+  if (newTheme === undefined) newTheme = activeTheme == "dark" ? "light" : "dark";
+  applyTheme(newTheme);
+  localStorage.setItem("theme", newTheme);
+  if (themeChannel) {
+    themeChannel.postMessage(newTheme);
+  }
+}
+
+if (themeChannel) {
+  themeChannel.onmessage = (event) => applyTheme(localStorage.getItem("theme"));
+}
+
 let articles = {};
 let sublists = {};
 let sections = [];
@@ -151,6 +177,8 @@ addEventListener("DOMContentLoaded", () => {
   setTimeout(() => document.body.classList.remove("loading"));
   document.getElementById("menu").addEventListener("click", () => menu());
   document.getElementById("menu-background").addEventListener("click", () => menu(false));
+
+  document.getElementById("theme").addEventListener("click", () => toggleTheme());
 
   addEventListener("scroll", () => {
     if (inhibited) {

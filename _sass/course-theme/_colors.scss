@@ -20,32 +20,29 @@
   --table-title-bg-color: #f4f4f4;
 }
 
-// Ensure that unwanted applications of these rules are seen in light mode as well
-:link, :visited, :link:active, :visited:active { color: revert; }
+:root.dark-theme {
+  --bg-color: #141414;
+  --text-color: #f0f0f0;
+  --shadow-color: #{rgba(black, 50%)};
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #141414;
-    --text-color: #f0f0f0;
-    --shadow-color: #{rgba(black, 50%)};
+  --hl-tab-color: #{$theme-col};
+  --hl-bg-color: #{rgba($theme-col, 20%)};
 
-    --hl-tab-color: #{$theme-col};
-    --hl-bg-color: #{rgba($theme-col, 20%)};
+  --menu-tab-color: #888;
+  --menu-tab-active-color: #bbb;
+  --menu-hover-bg-color: #{rgba(white, 20%)};
+  --menu-active-bg-color: #{rgba(white, 30%)};
 
-    --menu-tab-color: #888;
-    --menu-tab-active-color: #bbb;
-    --menu-hover-bg-color: #{rgba(white, 20%)};
-    --menu-active-bg-color: #{rgba(white, 30%)};
+  --code-bg-color: #1b1d1e;
+  --note-code-bg-color: #{rgba(black, 20%)};
+  --code-gutter-color: #aaa;
 
-    --code-bg-color: #1b1d1e;
-    --note-code-bg-color: #{rgba(black, 20%)};
-    --code-gutter-color: #aaa;
+  --table-border-color: #777;
+  --table-strong-border-color: #ccc;
+  --table-title-bg-color: #333;
+}
 
-    --table-border-color: #777;
-    --table-strong-border-color: #ccc;
-    --table-title-bg-color: #333;
-  }
-
+.dark-theme {
   :link { color: #5eaafb; }
   :visited { color: #c986f7; }
   :link:active, :visited:active { color: #de36ec; }

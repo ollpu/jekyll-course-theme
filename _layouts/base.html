@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="{{ "/assets/css/fonts.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
     <script>
+      let activeTheme = localStorage.getItem("theme");
+      if (activeTheme === null) {
+        activeTheme = window.matchMedia("(prefers-color-scheme: dark)") ? "dark" : "light";
+      }
+      document.documentElement.classList.toggle(
+        "dark-theme",
+        activeTheme === "dark"
+      );
       const hideOtherSectionMenus = {{ site.hide_other_section_menus | to_integer }};
     </script>
     <script src="{{ "/assets/js/navigation.js" | relative_url }}"></script>
@@ -31,14 +39,27 @@
       </svg>
     </button>
     <div class="side" id="side">
-      <a class="header" href="{{ "/" | relative_url }}">
-        <header>
+      <header>
+        <button class="theme" id="theme" title="Theme">
+          <svg viewBox="0 0 10 10" width="25" height="25">
+            <circle cx="5" cy="5" r="2.4"></circle>
+            <circle cx="5" cy="1" r="0.8"></circle>
+            <circle cx="9" cy="5" r="0.8"></circle>
+            <circle cx="5" cy="9" r="0.8"></circle>
+            <circle cx="1" cy="5" r="0.8"></circle>
+            <circle cx="2.17" cy="2.17" r="0.8"></circle>
+            <circle cx="7.83" cy="2.17" r="0.8"></circle>
+            <circle cx="2.17" cy="7.83" r="0.8"></circle>
+            <circle cx="7.83" cy="7.83" r="0.8"></circle>
+          </svg>
+        </button>
+        <a class="header" href="{{ "/" | relative_url }}">
           <h1>{{ site.title }}</h1>
           {%- if site.subtitle -%}
             <h2>{{ site.subtitle }}</h2>
           {%- endif -%}
-        </header>
-      </a>
+        </a>
+      </header>
       <nav>
         {% comment %}
         TODO: Stable sort by "order" key (or at least preserve order of nils)
