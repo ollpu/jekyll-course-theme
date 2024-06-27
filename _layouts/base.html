@@ -88,7 +88,12 @@
       <div class="awning" id="awning" aria-hidden="true">{{ page.title }}</div>
       {{ content }}
       <footer>
-        <img src="{{ "/assets/img/hy_logo.svg" | relative_url }}">
+        <img id="hy-logo" src="{{ "/assets/img/hy_logo.svg" | relative_url }}">
+        <style>
+          .dark-theme #hy-logo {
+            content: url("{{ "/assets/img/hy_logo_neg.svg" | relative_url }}");
+          }
+        </style>
       </footer>
     </main>
   </body>
