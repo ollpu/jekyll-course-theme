@@ -212,23 +212,23 @@
 // .go (Generic.Output) modified for visibility
 @mixin rouge-highlight-theme-molokai {
   .c, .ch, .cd, .cpf {
-    color: #5e5d83;
+    color: #888897;
     font-style: italic;
   }
   .cm {
-    color: #5e5d83;
+    color: #888897;
     font-style: italic;
   }
   .c1 {
-    color: #5e5d83;
+    color: #888897;
     font-style: italic;
   }
   .cp {
-    color: #465457;
+    color: #5b6f73;
     font-weight: bold;
   }
   .cs {
-    color: #465457;
+    color: #5b6f73;
     font-weight: bold;
     font-style: italic;
   }
