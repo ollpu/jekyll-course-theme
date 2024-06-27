@@ -13,7 +13,7 @@ This theme is currently not on RubyGems, and it is intended to be used via the
 Add this to your `_config.yml`:
 
 ```yaml
-remote_theme: ollpu/jekyll-course-theme@v1
+remote_theme: ollpu/jekyll-course-theme@v2
 ```
 
 Make sure the `jekyll-remote-theme` plugin is installed and enabled. It is
@@ -66,7 +66,7 @@ automatically enabled on GitHub Pages and when using `gem "github-pages"`.
     # Uncomment to change the theme color:
     # theme-color: '#60a6ec'
 
-    remote_theme: ollpu/jekyll-course-theme@v1
+    remote_theme: ollpu/jekyll-course-theme@v2
 
     markdown: kramdown
     highlighter: rouge
@@ -318,6 +318,19 @@ page](https://ollpu.github.io/jekyll-course-theme/gallery).
 
 The `{: }` syntax is a Kramdown [Inline Attribute
 List](https://kramdown.gettalong.org/syntax.html#inline-attribute-lists).
+
+## Changelog
+
+### v2
+
+- Dark theme
+    - Activated automatically via media query `prefers-color-scheme` or can be
+      changed by clicking on the "sun" icon in the header.
+
+### v1
+
+- Initial version
+- Minor fixes and adjustments
 
 ## License
 
