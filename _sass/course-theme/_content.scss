@@ -37,8 +37,8 @@ hr {
 }
 
 .note {
-  background-color: rgba($theme-col, 12%);
-  border-left: 2px solid $theme-col;
+  background-color: var(--hl-bg-color);
+  border-left: 2px solid var(--hl-tab-color);
   margin: 1em 0;
   padding: 0 1em 0 calc(1em - 2px);
   display: flow-root;
@@ -55,13 +55,13 @@ p.note {
 
   font-size: inherit;
   font-weight: 600;
-  background-color: rgba($theme-col, 12%);
+  background-color: var(--hl-bg-color);
 }
 
 .code-title {
   padding: 0.45em 1em;
   user-select: none;
-  border-bottom: 2px solid $theme-col;
+  border-bottom: 2px solid var(--hl-tab-color);
 
   + div pre.highlight, + .note {
     margin-top: 0;
@@ -70,7 +70,7 @@ p.note {
 
 .note-title {
   padding: 0.45em 1em 0.45em calc(1em - 2px);
-  border-left: 2px solid $theme-col;
+  border-left: 2px solid var(--hl-tab-color);
 
   + .note {
     margin-top: 0;
@@ -87,11 +87,11 @@ table {
 }
 
 tbody {
-  border-top: 2px solid #666;
+  border-top: 2px solid var(--table-strong-border-color);
 }
 
 th, td {
-  border: 1px solid #bbb;
+  border: 1px solid var(--table-border-color);
   padding: 4px 8px;
 }
 
@@ -108,7 +108,7 @@ table[title]::before {
 
   font-weight: bold;
   padding: 4px;
-  background-color: #f4f4f4;
+  background-color: var(--table-title-bg-color);
 }
 
 @for $w from 1 through 16 {
@@ -126,7 +126,7 @@ code {
 // Inline code
 code.highlighter-rouge {
   padding: 0.05em 0.2em;
-  background-color: #f4f4f4;
+  background-color: var(--code-bg-color);
   box-decoration-break: clone;
 }
 
@@ -134,15 +134,21 @@ code.highlighter-rouge {
   pre {
     padding: 1em;
 
-    background-color: #f4f4f4;
+    background-color: var(--code-bg-color);
     overflow-x: auto;
 
     .note & {
-      background-color: rgba(black, 4%);
+      background-color: var(--note-code-bg-color);
     }
   }
 
   @include rouge-highlight-theme-github;
+}
+
+@media (prefers-color-scheme: dark) {
+  .highlight {
+    @include rouge-highlight-theme-molokai;
+  }
 }
 
 .language-console {
@@ -177,7 +183,7 @@ figure.highlight {
     padding-right: 1em;
 
     text-align: right;
-    color: #444;
+    color: var(--code-gutter-color);
     user-select: none;
   }
 }

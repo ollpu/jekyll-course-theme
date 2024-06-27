@@ -17,6 +17,9 @@ body {
   flex-direction: row;
   justify-content: center;
 
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
   @include breakpoint-lt-menu {
     display: block;
   }
@@ -47,9 +50,9 @@ body {
 
     visibility: hidden;
 
-    background-color: white;
+    background-color: var(--bg-color);
     border-top: $top-bar-height solid $theme-col;
-    @include dark-shadow;
+    @include normal-shadow;
 
     transition: left ease-in, visibility;
     transition-duration: $menu-opening-duration;
@@ -101,7 +104,7 @@ nav {
     @include sticky;
     top: 0;
     content: '';
-    @include white-shadow;
+    @include bg-shadow;
   }
 
   box-sizing: border-box;
@@ -128,7 +131,7 @@ nav {
   }
 
   @include breakpoint-lt-menu {
-    background-color: white;
+    background-color: var(--bg-color);
 
     ul {
       padding-left: $menu-padding - $side-padding;
@@ -142,21 +145,21 @@ nav {
     box-sizing: border-box;
     padding: 5px ($side-padding - 4px);
 
-    border-left: 2px solid #999;
+    border-left: 2px solid var(--menu-tab-color);
     text-decoration: none;
-    color: inherit;
+    color: inherit !important;
 
     &.current {
-      border-left-color: $theme-col;
-      background-color: rgba($theme-col, 12%);
+      border-left-color: var(--hl-tab-color);
+      background-color: var(--hl-bg-color);
     }
     &:hover {
-      border-left-color: #999;
-      background-color: rgba(black, 8%);
+      border-left-color: var(--menu-tab-color);
+      background-color: var(--menu-hover-bg-color);
     }
     &:active, &.current:active {
-      border-left-color: #777;
-      background-color: rgba(black, 16%);
+      border-left-color: var(--menu-tab-active-color);
+      background-color: var(--menu-active-bg-color);
     }
     &.unbound {
       color: red;
@@ -202,14 +205,14 @@ main {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    background-color: white;
-    @include white-shadow;
+    background-color: var(--bg-color);
+    @include bg-shadow;
 
     transition: color;
     transition-duration: $awning-appear-duration;
 
     &.show {
-      color: black;
+      color: var(--text-color);
     }
 
     .loading & {

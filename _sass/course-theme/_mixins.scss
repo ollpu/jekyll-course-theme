@@ -4,11 +4,11 @@
   position: -webkit-sticky;
 }
 
-@mixin white-shadow {
-  box-shadow: 0 0 12px 6px white;
+@mixin bg-shadow {
+  box-shadow: 0 0 12px 6px var(--bg-color);
 }
 
-@mixin dark-shadow {
-  box-shadow: 0 0 10px rgba(black, 5%);
+@mixin normal-shadow {
+  box-shadow: 0 0 10px var(--shadow-color);
 }
 

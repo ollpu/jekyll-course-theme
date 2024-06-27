@@ -3,6 +3,7 @@
 
 $theme-col: {{ site.theme-color | default: "#60a6ec" }};
 @import "course-theme/params";
+@import "course-theme/colors";
 @import "course-theme/breakpoints";
 @import "course-theme/mixins";
 @import "course-theme/highlight";
