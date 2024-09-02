@@ -14,7 +14,7 @@
     <script>
       let activeTheme = localStorage.getItem("theme");
       if (activeTheme === null) {
-        activeTheme = window.matchMedia("(prefers-color-scheme: dark)") ? "dark" : "light";
+        activeTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       }
       document.documentElement.classList.toggle(
         "dark-theme",
