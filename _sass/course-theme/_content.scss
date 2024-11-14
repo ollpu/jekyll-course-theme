@@ -137,6 +137,10 @@ code.highlighter-rouge {
     background-color: var(--code-bg-color);
     overflow-x: auto;
 
+    @if $small-code-block-font {
+        font-size: 15px;
+    }
+
     .note & {
       background-color: var(--note-code-bg-color);
     }

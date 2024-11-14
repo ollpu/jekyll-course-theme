@@ -22,7 +22,7 @@ automatically enabled on GitHub Pages and when using `gem "github-pages"`.
 ## Set up new site
 
 1.  **Initialize Jekyll (optional)**
-    
+
     This step isn't strictly necessary if you don't want to develop the site
     locally. Start with an empty Git repository if you want to skip it.
 
@@ -64,7 +64,7 @@ automatically enabled on GitHub Pages and when using `gem "github-pages"`.
     baseurl: "/site-name"
     url: "https://GITHUB_USER.github.io"
     # Uncomment to change the theme color:
-    # theme-color: '#60a6ec'
+    # theme_color: '#60a6ec'
 
     remote_theme: ollpu/jekyll-course-theme@v2
 
@@ -87,6 +87,9 @@ automatically enabled on GitHub Pages and when using `gem "github-pages"`.
     # Uncomment to hide the section submenus in navigation
     # for pages other than the current one:
     # hide_other_section_menus: true
+
+    # Uncomment to make code block font smaller:
+    # small_code_block_font: true
 
     defaults:
       -
@@ -117,11 +120,11 @@ automatically enabled on GitHub Pages and when using `gem "github-pages"`.
     title: Frontpage
     permalink: /
     ---
-    
+
     # Site Name
     ```
 5.  **Deploy to GitHub Pages**
-    
+
     On your GitHub repository, go to
     `https://github.com/GITHUB_USER/site-name/settings/pages`.
 
@@ -130,7 +133,7 @@ automatically enabled on GitHub Pages and when using `gem "github-pages"`.
 
     Remember to configure a custom domain if applicable, and set that in
     `_config.yml` as well.
-    
+
 
 ## Usage
 
@@ -335,4 +338,3 @@ List](https://kramdown.gettalong.org/syntax.html#inline-attribute-lists).
 ## License
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
