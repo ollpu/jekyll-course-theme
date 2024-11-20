@@ -322,6 +322,24 @@ page](https://ollpu.github.io/jekyll-course-theme/gallery).
 The `{: }` syntax is a Kramdown [Inline Attribute
 List](https://kramdown.gettalong.org/syntax.html#inline-attribute-lists).
 
+### Custom CSS
+
+Custom CSS is automatically added to the site if you put it in the file
+`_sass/_extra.scss`. All variables and mixins defined in the theme under
+`_sass/course-theme` are available, but there are no stability guarantees.
+
+To avoid interfering with the default elements, scope your styles inside `article`:
+
+```scss
+article {
+  /* Styles defined here will only apply inside the content, e.g.:
+  img {
+    border: 1px solid black;
+  }
+  */
+}
+```
+
 ## Changelog
 
 ### v2

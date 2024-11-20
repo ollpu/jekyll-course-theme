@@ -12,3 +12,5 @@ $small-code-font: {{ site.small_code_font | default: "false" }};
 
 @import "course-theme/main";
 @import "course-theme/content";
+
+@import "extra";
