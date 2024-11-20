@@ -128,6 +128,10 @@ code.highlighter-rouge {
   padding: 0.05em 0.2em;
   background-color: var(--code-bg-color);
   box-decoration-break: clone;
+
+  @if $small-code-font {
+      font-size: 0.833em;
+  }
 }
 
 .highlight {
@@ -137,7 +141,7 @@ code.highlighter-rouge {
     background-color: var(--code-bg-color);
     overflow-x: auto;
 
-    @if $small-code-block-font {
+    @if $small-code-font {
         font-size: 15px;
     }
 

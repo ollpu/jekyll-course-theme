@@ -88,8 +88,8 @@ automatically enabled on GitHub Pages and when using `gem "github-pages"`.
     # for pages other than the current one:
     # hide_other_section_menus: true
 
-    # Uncomment to make code block font smaller:
-    # small_code_block_font: true
+    # Uncomment to make code font smaller (inline & block):
+    # small_code_font: true
 
     defaults:
       -

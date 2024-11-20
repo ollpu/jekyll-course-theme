@@ -2,7 +2,7 @@
 ---
 
 $theme-col: {{ site.theme_color | default: site.theme-color | default: "#60a6ec" }};
-$small-code-block-font: {{ site.small_code_block_font | default: "false" }};
+$small-code-font: {{ site.small_code_font | default: "false" }};
 
 @import "course-theme/params";
 @import "course-theme/colors";
